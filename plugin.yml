@@ -1,0 +1,415 @@
+name: EcoSystem
+version: 5.3.0
+main: me.antonschouten.economy.Main
+api-version: 1.21
+authors:
+  - Antonschouten
+  - Basschouten
+  - Janschouten
+description: 'Economy++ - economy, jobs, teleports, guilds, homes, shops, chunk claims and more.'
+website: 'https://economyplusplus.jimdosite.com/'
+prefix: 'Economy++'w
+
+commands:
+  setbal:
+    description: 'Set the balance of a player.'
+    usage: '/setbal <player> <amount>'
+    aliases: [setbalance]
+    permission: 'economy++.setbal'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  addbal:
+    description: 'Add money to the balance of a player.'
+    usage: '/addbal <player> <amount>'
+    aliases: [addbalance]
+    permission: 'economy++.addbal'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  removebal:
+    description: 'Remove money from the balance of a player.'
+    usage: '/removebal <player> <amount>'
+    aliases: [removebalance]
+    permission: 'economy++.removebal'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  bal:
+    description: 'View your balance or, with permission, another player''s balance.'
+    usage: '/bal [player]'
+    aliases: [balance]
+
+  pay:
+    description: 'Pay money to another online player.'
+    usage: '/pay <player> <amount>'
+
+  payall:
+    description: 'Pay the specified amount to every eligible online player.'
+    usage: '/payall <amount>'
+
+  resetbal:
+    description: 'Reset the balance of a player.'
+    usage: '/resetbal <player>'
+    aliases: [resetbalance]
+    permission: 'economy++.resetbal'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  resetallaccounts:
+    description: 'Reset all stored player balances.'
+    usage: '/resetallaccounts'
+    aliases: [resetallbalances]
+    permission: 'economy++.resetbalall'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  economy:
+    description: 'Show Economy++ information and management commands.'
+    usage: '/economy <help|info|version|donate|reload|update|debug|adminpanel>'
+    aliases: [eco, ecosystem, economy++, epp]
+
+  jobs:
+    description: 'Open the job selection menu.'
+    usage: '/jobs'
+    aliases: [jobgui]
+
+  job:
+    description: 'Manage and view your job.'
+    usage: '/job <help|change|booster|stats|info|progress|level|delete>'
+
+  resetalljobs:
+    description: 'Reset the jobs of all players.'
+    usage: '/resetalljobs'
+    permission: 'economy++.resetjobs'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  salary:
+    description: 'Show information about the salary system.'
+    usage: '/salary'
+
+  lootcrate:
+    description: 'Purchase one or more loot crates.'
+    usage: '/lootcrate <amount>'
+
+  setlootcrate:
+    description: 'Register a loot-crate block.'
+    usage: '/setlootcrate'
+    permission: 'economy++.cratecreate'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  shop:
+    description: 'Open the server shop or manage shop items.'
+    usage: '/shop [help|add <price>]'
+
+  sethome:
+    description: 'Create or update a home.'
+    usage: '/sethome <home>'
+    permission: 'economy++.home'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  delhome:
+    description: 'Delete one of your homes.'
+    usage: '/delhome <home>'
+    permission: 'economy++.home'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  home:
+    description: 'Teleport to one of your homes.'
+    usage: '/home <home>'
+    permission: 'economy++.home'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  homes:
+    description: 'List your saved homes.'
+    usage: '/homes'
+    permission: 'economy++.home'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  gift:
+    description: 'Send an amount of the item in your main hand to another player.'
+    usage: '/gift <player> <amount>'
+
+  serverbank:
+    description: 'View the current server-bank balance.'
+    usage: '/serverbank'
+
+  guild:
+    description: 'Create, manage and inspect guilds.'
+    usage: '/guild <help|create|delete|invite|accept|kick|info|balance|deposit|withdraw>'
+
+  g:
+    description: 'Send a message to your guild chat.'
+    usage: '/g <message>'
+
+  chunk:
+    description: 'Manage chunk claims and trusted players.'
+    usage: '/chunk <info|claim|unclaim|trust|untrust> [player]'
+    permission: 'economy++.chunk'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tradenpc:
+    description: 'Create and manage Economy++ trade NPCs.'
+    usage: '/tradenpc <spawn|remove|addtrade|list> ...'
+    permission: 'economy++.tradenpc'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  baltop:
+    description: 'Show the richest stored player accounts.'
+    usage: '/baltop'
+    aliases: [topbal]
+
+  transactions:
+    description: 'View recent Economy++ transactions.'
+    usage: '/transactions [player] [page]'
+    aliases: [tx, txlog]
+    permission: 'economy++.transactions'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  spawn:
+    description: 'Teleport to the Economy++ server spawn.'
+    usage: '/spawn'
+    permission: 'economy++.spawn'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  setspawn:
+    description: 'Set the Economy++ server spawn.'
+    usage: '/setspawn'
+    permission: 'economy++.setspawn'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  warp:
+    description: 'Teleport to an Economy++ warp.'
+    usage: '/warp <name>'
+    permission: 'economy++.warp'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  warps:
+    description: 'List all Economy++ warps.'
+    usage: '/warps'
+    permission: 'economy++.warp'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  setwarp:
+    description: 'Create or update an Economy++ warp.'
+    usage: '/setwarp <name>'
+    permission: 'economy++.warp.admin'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  delwarp:
+    description: 'Delete an Economy++ warp.'
+    usage: '/delwarp <name>'
+    aliases: [deletewarp]
+    permission: 'economy++.warp.admin'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tpa:
+    description: 'Request to teleport to another player.'
+    usage: '/tpa <player>'
+    permission: 'economy++.tpa'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tpahere:
+    description: 'Request another player to teleport to you.'
+    usage: '/tpahere <player>'
+    permission: 'economy++.tpahere'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tpaccept:
+    description: 'Accept a pending Economy++ teleport request.'
+    usage: '/tpaccept [player]'
+    permission: 'economy++.tpa'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tpdeny:
+    description: 'Deny a pending Economy++ teleport request.'
+    usage: '/tpdeny [player]'
+    permission: 'economy++.tpa'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  tpcancel:
+    description: 'Cancel your outgoing Economy++ teleport request(s).'
+    usage: '/tpcancel [player]'
+    permission: 'economy++.tpa'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  back:
+    description: 'Return to your previous teleport or death location.'
+    usage: '/back'
+    permission: 'economy++.back'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+
+  auction:
+    description: 'Sell and buy items in the chat.'
+    permission: 'economy++.auction'
+    permission-message: '§8[§6Economy++§8] §fYou do not have permission to use this command.'
+    aliases: [auc]
+
+permissions:
+  'economy++.*':
+    description: 'Grants all Economy++ permissions.'
+    default: op
+    children:
+      'economy++.player': true
+      'economy++.admin': true
+
+  'economy++.player':
+    description: 'Grants the standard Economy++ player permissions.'
+    default: true
+    children:
+      'economy++.help': true
+      'economy++.home': true
+      'economy++.chunk': true
+      'economy++.transactions': true
+      'economy++.spawn': true
+      'economy++.warp': true
+      'economy++.tpa': true
+      'economy++.tpahere': true
+      'economy++.back': true
+
+  'economy++.admin':
+    description: 'Grants all Economy++ administrative permissions.'
+    default: op
+    children:
+      'economy++.setbal': true
+      'economy++.addbal': true
+      'economy++.removebal': true
+      'economy++.getbaltarget': true
+      'economy++.resetbal': true
+      'economy++.resetbalall': true
+      'economy++.resetjobs': true
+      'economy++.reload': true
+      'economy++.deletejob': true
+      'economy++.debug': true
+      'economy++.update': true
+      'economy++.adminpanel': true
+      'economy++.signs': true
+      'economy++.cratecreate': true
+      'economy++.shop': true
+      'economy++.tradenpc': true
+      'economy++.setworld': true
+      'economy++.transactions': true
+      'economy++.transactions.others': true
+      'economy++.setspawn': true
+      'economy++.warp.admin': true
+      'economy++.teleport.bypass.delay': true
+      'economy++.teleport.bypass.cooldown': true
+
+  'economy++.setbal':
+    description: 'Allows setting a player balance.'
+    default: op
+
+  'economy++.addbal':
+    description: 'Allows adding money to a player balance.'
+    default: op
+
+  'economy++.removebal':
+    description: 'Allows removing money from a player balance.'
+    default: op
+
+  'economy++.getbaltarget':
+    description: 'Allows viewing another player''s balance.'
+    default: op
+
+  'economy++.transactions':
+    description: 'Allows viewing your own recent Economy++ transactions.'
+    default: true
+
+  'economy++.transactions.others':
+    description: 'Allows viewing another player''s recent Economy++ transactions.'
+    default: op
+
+  'economy++.spawn':
+    description: 'Allows teleporting to the Economy++ server spawn.'
+    default: true
+
+  'economy++.setspawn':
+    description: 'Allows setting the Economy++ server spawn.'
+    default: op
+
+  'economy++.warp':
+    description: 'Allows using and listing Economy++ warps.'
+    default: true
+
+  'economy++.warp.admin':
+    description: 'Allows creating, updating and deleting Economy++ warps.'
+    default: op
+
+  'economy++.tpa':
+    description: 'Allows sending, accepting, denying and cancelling teleport requests.'
+    default: true
+
+  'economy++.tpahere':
+    description: 'Allows requesting another player to teleport to you.'
+    default: true
+
+  'economy++.back':
+    description: 'Allows returning to a previous teleport or death location.'
+    default: true
+
+  'economy++.teleport.bypass.delay':
+    description: 'Bypasses the Economy++ teleport warmup delay.'
+    default: op
+
+  'economy++.teleport.bypass.cooldown':
+    description: 'Bypasses Economy++ teleport and TPA request cooldowns.'
+    default: op
+
+  'economy++.resetbal':
+    description: 'Allows resetting a player balance.'
+    default: op
+
+  'economy++.resetbalall':
+    description: 'Allows resetting all stored player balances.'
+    default: op
+
+  'economy++.resetjobs':
+    description: 'Allows resetting all player jobs.'
+    default: op
+
+  'economy++.help':
+    description: 'Legacy/player permission reserved for Economy++ help access.'
+    default: true
+
+  'economy++.reload':
+    description: 'Allows reloading Economy++ data and configuration.'
+    default: op
+
+  'economy++.setworld':
+    description: 'Legacy permission reserved for world-management functionality.'
+    default: op
+
+  'economy++.deletejob':
+    description: 'Allows deleting another player''s job.'
+    default: op
+
+  'economy++.debug':
+    description: 'Allows using Economy++ debug functionality.'
+    default: op
+
+  'economy++.update':
+    description: 'Allows manually checking for updates and receiving update notifications.'
+    default: op
+
+  'economy++.adminpanel':
+    description: 'Allows access to the Economy++ admin-panel authentication flow.'
+    default: op
+
+  'economy++.signs':
+    description: 'Allows creating Economy++ ATM, shop and repair signs.'
+    default: op
+
+  'economy++.cratecreate':
+    description: 'Allows registering loot-crate blocks.'
+    default: op
+
+  'economy++.shop':
+    description: 'Allows editing the Economy++ server shop.'
+    default: op
+
+  'economy++.home':
+    description: 'Allows using Economy++ home commands.'
+    default: true
+
+  'economy++.chunk':
+    description: 'Allows using Economy++ chunk-claim commands.'
+    default: true
+
+  'economy++.tradenpc':
+    description: 'Allows creating and managing Economy++ trade NPCs.'
+    default: op
